@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; style-src 'self'; script-src 'self';">
+  <title>Kit Maker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">K</div><div><strong>KIT MAKER</strong><small>BUILD · PLAY · TRANSFER</small></div></div>
+      <div class="top-actions"><button class="button quiet" id="open-kit">Open kit</button><button class="button accent" id="export-kit">Export kit</button></div>
+    </header>
+    <main>
+      <section class="intro"><div><div class="eyebrow">YOUR SAMPLE WORKBENCH</div><h1>Make a kit. Find a groove.</h1><p>Arrange sounds here, then bring the sample bundle into MPC or MASCHINE to riff. Bring sounds back from either setup by importing their audio files.</p></div><div class="status-pill"><span></span> LOCAL PROJECT</div></section>
+      <section class="toolbar">
+        <label class="field kit-name"><span>KIT NAME</span><input id="kit-name" value="Untitled Kit" maxlength="50"></label>
+        <label class="field template-select"><span>PAD LAYOUT</span><select id="layout"><option>Universal 4x4</option><option>MASCHINE STUDIO · 4x4</option><option>MPC Sample · 4x4</option></select></label>
+        <button class="button import-button" id="import-audio"><span class="plus">＋</span> Import audio</button>
+      </section>
+      <section class="workspace">
+        <div class="section-heading"><div><h2>16-pad kit</h2><p>Choose a pad, then assign a sample. Double-click a loaded pad to preview it.</p></div><div class="counter"><b id="loaded-count">0</b> / 16 LOADED</div></div>
+        <div class="pad-grid" id="pad-grid" aria-label="Sixteen sample pads"></div>
+      </section>
+      <section class="bottom-row">
+        <div class="sample-library panel"><div class="panel-title"><div><h3>Sample pool</h3><p>Imported audio ready to assign</p></div><span class="pool-count" id="pool-count">0 FILES</span></div><div id="sample-list" class="sample-list"><div class="empty">Your imported samples will show up here.</div></div></div>
+        <div class="workflow panel"><div class="panel-title"><div><h3>Move between setups</h3><p>A practical, format-safe workflow</p></div><span class="workflow-icon">↔</span></div><ol><li><b>Build or import</b><span>Assign audio here, or open a saved Kit Maker kit. You can also import audio exported from MPC or MASCHINE.</span></li><li><b>Export the sample bundle</b><span>Kit Maker saves named audio files and a portable kit manifest in one folder.</span></li><li><b>Load and riff</b><span>Load those samples in your device/software, make your beat, then import the resulting audio or samples back here.</span></li></ol><div class="note">Native MPC and MASCHINE project formats vary by product/version. This first version transfers audio and pad organization; it does not claim to create proprietary project files.</div></div>
+      </section>
+      <footer>Kit Maker 0.1 · Your audio stays on your computer.</footer>
+    </main>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>

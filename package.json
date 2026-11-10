@@ -1,0 +1,24 @@
+{
+  "name": "kit-maker",
+  "version": "0.1.0",
+  "description": "A standalone sample-kit bridge for MPC Sample and MASCHINE workflows.",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --mac",
+    "dist:win": "electron-builder --win",
+    "dist:mac": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^35.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.kitmaker.desktop",
+    "productName": "Kit Maker",
+    "files": ["src/**/*", "package.json"],
+    "mac": { "target": ["dmg", "zip"] },
+    "win": { "target": ["nsis", "zip"] }
+  }
+}

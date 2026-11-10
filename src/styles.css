@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #101114; color: #f4f3f1; font-synthesis: none; }
+body { margin: 0; min-width: 850px; background: radial-gradient(ellipse at 68% -12%, #30271f 0, transparent 37%), #101114; }
+button, input, select { font: inherit; }
+button { color: inherit; }
+.app-shell { min-height: 100vh; }
+.topbar { height: 76px; padding: 0 5.2%; border-bottom: 1px solid #292a2e; display: flex; align-items: center; justify-content: space-between; background: rgba(15,16,19,.78); }
+.brand { display:flex; align-items:center; gap: 12px; letter-spacing: 1.4px; font-size: 13px; }
+.brand strong { display:block; font-size: 13px; }
+.brand small { display:block; color:#77777f; font-size:8px; margin-top:5px; letter-spacing:2px; }
+.brand-mark { display:grid; place-items:center; width:35px; height:35px; border-radius:10px; background:#ff7a40; color:#161616; font-weight:900; font-size:19px; }
+.top-actions { display:flex; gap:10px; }
+.button { border:1px solid #38393e; background:#1b1c20; border-radius:8px; padding:10px 15px; cursor:pointer; font-weight:650; font-size:12px; transition:.15s; }
+.button:hover { border-color:#ff8956; transform:translateY(-1px); }
+.button.accent { background:#ff7a40; border-color:#ff7a40; color:#191512; }
+.button.quiet { color:#d5d3d0; }
+main { width:min(1060px, 90%); margin:0 auto; }
+.intro { display:flex; align-items:center; justify-content:space-between; padding:39px 0 28px; }
+.eyebrow { color:#ff8956; font-size:9px; font-weight:800; letter-spacing:2px; }
+h1 { margin:10px 0 8px; font-size:32px; letter-spacing:-1.3px; }
+.intro p { margin:0; color:#99999f; font-size:12px; line-height:1.6; max-width:620px; }
+.status-pill { border:1px solid #303136; padding:8px 11px; border-radius:99px; font-size:9px; color:#aaa; letter-spacing:1px; white-space:nowrap; }
+.status-pill span { display:inline-block; width:6px; height:6px; background:#71cb89; border-radius:50%; margin-right:6px; vertical-align:1px; }
+.toolbar { background:#191a1e; border:1px solid #2b2c31; border-radius:11px; padding:13px; display:flex; align-items:end; gap:12px; }
+.field { display:flex; flex-direction:column; gap:6px; }
+.field span { font-size:8px; letter-spacing:1.2px; font-weight:800; color:#777980; }
+.field input,.field select { height:37px; border:1px solid #36373c; border-radius:6px; color:#e7e5e3; background:#121316; padding:0 10px; outline:none; font-size:11px; }
+.field input:focus,.field select:focus { border-color:#ff8956; }
+.kit-name { flex:1; }
+.template-select { width:235px; }
+.import-button { height:37px; padding:0 16px; }
+.plus { font-size:16px; vertical-align:-1px; margin-right:4px; color:#ff8956; }
+.workspace { margin-top:27px; }
+.section-heading { display:flex; align-items:end; justify-content:space-between; margin-bottom:13px; }
+h2 { font-size:16px; margin:0 0 4px; }
+.section-heading p,.panel-title p { font-size:10px; color:#7e7f85; margin:0; }
+.counter { font-size:9px; letter-spacing:1.1px; color:#797a80; }
+.counter b { color:#ff8956; font-size:13px; margin-right:4px; }
+.pad-grid { display:grid; grid-template-columns:repeat(8,1fr); gap:8px; }
+.pad { height:79px; text-align:left; position:relative; border:1px solid #2e3035; background:linear-gradient(145deg,#222328,#1a1b1f); border-radius:8px; cursor:pointer; padding:10px; overflow:hidden; transition:.13s; }
+.pad:hover { border-color:#77777c; transform:translateY(-1px); }
+.pad.selected { border-color:#ff7a40; box-shadow:inset 0 0 0 1px #ff7a40; background:linear-gradient(145deg,#33241e,#211c1a); }
+.pad.loaded { background:linear-gradient(145deg,#25221f,#1c1c1e); }
+.pad-number { color:#73747b; font-size:9px; font-weight:700; }
+.pad-symbol { position:absolute; right:10px; top:9px; color:#53545a; font-size:15px; }
+.pad.loaded .pad-symbol { color:#ff8956; font-size:8px; top:13px; }
+.pad-name { position:absolute; left:10px; bottom:10px; right:8px; font-size:9px; font-weight:700; color:#72737a; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; }
+.pad.loaded .pad-name { color:#e7e2dc; }
+.bottom-row { display:grid; grid-template-columns: .9fr 1.1fr; gap:13px; margin-top:20px; }
+.panel { border:1px solid #2b2c31; background:#191a1e; border-radius:10px; padding:15px; min-height:206px; }
+.panel-title { display:flex; align-items:start; justify-content:space-between; margin-bottom:13px; }
+h3 { font-size:13px; margin:0 0 4px; }
+.pool-count { color:#74757b; font-size:8px; letter-spacing:1px; padding-top:4px; }
+.sample-list { max-height:138px; overflow:auto; }
+.empty { color:#686970; font-size:10px; border:1px dashed #35363a; border-radius:7px; padding:20px 10px; text-align:center; }
+.sample-row { display:flex; gap:9px; align-items:center; padding:7px 2px; border-bottom:1px solid #2b2c30; }
+.audio-dot { color:#ff8956; font-size:15px; }
+.sample-filename { flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:10px; color:#c8c7c5; }
+.assign-button { border:1px solid #3a3b40; background:#222327; border-radius:5px; padding:5px 8px; font-size:9px; cursor:pointer; }
+.assign-button:hover { border-color:#ff8956; }
+.workflow-icon { font-size:20px; color:#ff8956; }
+.workflow ol { padding:0; list-style:none; margin:0; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.workflow li b { display:block; font-size:10px; margin-bottom:5px; }
+.workflow li span { display:block; color:#85858b; font-size:9px; line-height:1.5; }
+.note { border-top:1px solid #2c2d31; margin-top:13px; padding-top:9px; color:#77787e; font-size:9px; line-height:1.45; }
+footer { color:#5f6066; text-align:center; font-size:9px; padding:20px 0 24px; }
+#toast { position:fixed; bottom:20px; left:50%; transform:translate(-50%,12px); opacity:0; pointer-events:none; transition:.2s; border:1px solid #48494e; background:#222327; border-radius:8px; padding:10px 15px; color:#eee; font-size:11px; box-shadow:0 8px 28px #0008; }
+#toast.visible { opacity:1; transform:translate(-50%,0); }
+@media (max-width:900px) { .pad-grid { grid-template-columns:repeat(4,1fr); } .pad { height:67px; } .bottom-row { grid-template-columns:1fr; } }
